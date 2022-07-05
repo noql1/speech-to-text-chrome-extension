@@ -31066,8 +31066,8 @@ const _default = GreetingComponent;
     return;
   }
 
-  reactHotLoader.register(GreetingComponent, "GreetingComponent", "/home/noql/Desktop/Adil/chrome-extension-boilerplate-react/src/containers/Greetings/Greetings.jsx");
-  reactHotLoader.register(_default, "default", "/home/noql/Desktop/Adil/chrome-extension-boilerplate-react/src/containers/Greetings/Greetings.jsx");
+  reactHotLoader.register(GreetingComponent, "GreetingComponent", "/home/noql/Desktop/chrome-extension-speech-to-text-project/src/containers/Greetings/Greetings.jsx");
+  reactHotLoader.register(_default, "default", "/home/noql/Desktop/chrome-extension-speech-to-text-project/src/containers/Greetings/Greetings.jsx");
 })();
 
 ;
@@ -31094,6 +31094,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_img_logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/img/logo.svg */ "./src/assets/img/logo.svg");
 /* harmony import */ var _containers_Greetings_Greetings__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../containers/Greetings/Greetings */ "./src/containers/Greetings/Greetings.jsx");
 /* harmony import */ var _Popup_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Popup.css */ "./src/pages/Popup/Popup.css");
+/* harmony import */ var _test__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./test */ "./src/pages/Popup/test.jsx");
 /* module decorator */ module = __webpack_require__.hmd(module);
 (function () {
   var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
@@ -31112,53 +31113,21 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 
 
 const Popup = () => {
-  const [currentTab, setCurrentTab] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)();
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    getCurrentTab().then(tab => setCurrentTab(tab));
-  }, []);
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    if (currentTab != null) {
-      console.log(currentTab.id);
-      chrome.tabs.query({
-        active: true,
-        currentWindow: true
-      }, function (tabs) {
-        chrome.scripting.executeScript({
-          target: {
-            tabId: currentTab.id
-          },
-          function: setPageBackgroundColor
-        });
-      });
-    }
-  }, [currentTab]);
-
-  function setPageBackgroundColor() {
-    chrome.storage.sync.get("color", ({
-      color
-    }) => {
-      document.body.style.backgroundColor = color;
-    });
-  }
-
-  async function getCurrentTab() {
-    let queryOptions = {
-      active: true,
-      lastFocusedWindow: true
-    }; // `tab` will either be a `tabs.Tab` instance or `undefined`.
-
-    let [tab] = await chrome.tabs.query(queryOptions);
-    return tab;
-  }
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "App"
-  }, "TESTTTTTTTTTTTTTTTT", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    onClick: () => {}
-  }, "Change COLOR"));
+    className: "App",
+    style: {
+      color: 'white'
+    }
+  }, "XXX", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: "btn"
+  }, " Click me"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    style: {
+      backgroundColor: isActive ? 'green' : '',
+      color: isActive ? 'white' : ''
+    },
+    onClick: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_test__WEBPACK_IMPORTED_MODULE_4__["default"], null)
+  })));
 };
-
-__signature__(Popup, "useState{[currentTab, setCurrentTab]}\nuseEffect{}\nuseEffect{}");
 
 const _default = Popup;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_default);
@@ -31171,8 +31140,8 @@ const _default = Popup;
     return;
   }
 
-  reactHotLoader.register(Popup, "Popup", "/home/noql/Desktop/Adil/chrome-extension-boilerplate-react/src/pages/Popup/Popup.jsx");
-  reactHotLoader.register(_default, "default", "/home/noql/Desktop/Adil/chrome-extension-boilerplate-react/src/pages/Popup/Popup.jsx");
+  reactHotLoader.register(Popup, "Popup", "/home/noql/Desktop/chrome-extension-speech-to-text-project/src/pages/Popup/Popup.jsx");
+  reactHotLoader.register(_default, "default", "/home/noql/Desktop/chrome-extension-speech-to-text-project/src/pages/Popup/Popup.jsx");
 })();
 
 ;
@@ -31206,6 +31175,68 @@ var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoader
 
 (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Popup__WEBPACK_IMPORTED_MODULE_2__["default"], null), window.document.querySelector('#app-container'));
 if (true) module.hot.accept();
+
+/***/ }),
+
+/***/ "./src/pages/Popup/test.jsx":
+/*!**********************************!*\
+  !*** ./src/pages/Popup/test.jsx ***!
+  \**********************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Clrchange)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* module decorator */ module = __webpack_require__.hmd(module);
+(function () {
+  var enterModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.enterModule : undefined;
+  enterModule && enterModule(module);
+})();
+
+var __signature__ = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default.signature : function (a) {
+  return a;
+};
+
+
+function Clrchange() {
+  const [isActive, setIsActive] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+
+  const handleClick = () => {
+    setIsActive(current => !current);
+  };
+
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      backgroundColor: isActive ? 'salmon' : '',
+      color: isActive ? 'white' : ''
+    },
+    onClick: handleClick
+  }, "Hello world"));
+}
+
+__signature__(Clrchange, "useState{[isActive, setIsActive](false)}");
+
+;
+
+(function () {
+  var reactHotLoader = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.default : undefined;
+
+  if (!reactHotLoader) {
+    return;
+  }
+
+  reactHotLoader.register(Clrchange, "Clrchange", "/home/noql/Desktop/chrome-extension-speech-to-text-project/src/pages/Popup/test.jsx");
+})();
+
+;
+
+(function () {
+  var leaveModule = typeof reactHotLoaderGlobal !== 'undefined' ? reactHotLoaderGlobal.leaveModule : undefined;
+  leaveModule && leaveModule(module);
+})();
 
 /***/ }),
 
@@ -34095,7 +34126,7 @@ module.exports = __webpack_require__.p + "103b5fa18196d5665a7e.svg";
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("6149b03d15ac01df8e7f")
+/******/ 		__webpack_require__.h = () => ("1f0ab979d23d35472446")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/harmony module decorator */
@@ -34121,7 +34152,7 @@ module.exports = __webpack_require__.p + "103b5fa18196d5665a7e.svg";
 /******/ 	/* webpack/runtime/load script */
 /******/ 	(() => {
 /******/ 		var inProgress = {};
-/******/ 		var dataWebpackPrefix = "my_extention:";
+/******/ 		var dataWebpackPrefix = "chrome-extension-boilerplate-react:";
 /******/ 		// loadScript function to load a script via script tag
 /******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
 /******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
@@ -34601,7 +34632,7 @@ module.exports = __webpack_require__.p + "103b5fa18196d5665a7e.svg";
 /******/ 			});
 /******/ 		}
 /******/ 		
-/******/ 		self["webpackHotUpdatemy_extention"] = (chunkId, moreModules, runtime) => {
+/******/ 		self["webpackHotUpdatechrome_extension_boilerplate_react"] = (chunkId, moreModules, runtime) => {
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
 /******/ 					currentUpdate[moduleId] = moreModules[moduleId];

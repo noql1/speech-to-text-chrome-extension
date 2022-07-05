@@ -8,26 +8,12 @@
     "default_popup": "popup.html",
     "default_icon": "icon-34.png"
   },
-  "permissions": [
-    "tabs",
-    "scripting",
-    "storage",
-    "notifications",
-    "http://*/",
-    "https://*/",
-    "activeTab"
-  ],
-  "chrome_url_overrides": {
-    "newtab": "newtab.html"
-  },
-  "host_permissions": ["http://*/", "https://*/"],
   "icons": {
     "128": "icon-128.png"
   },
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*", "<all_urls>"],
-      "match_origin_as_fallback": true,
       "js": ["contentScript.bundle.js"],
       "css": ["content.styles.css"]
     }
